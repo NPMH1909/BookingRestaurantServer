@@ -1,0 +1,2002 @@
+[
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Chờ đợi quá lâu để được phục vụ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn nguội và nhạt nhẽo.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn không đúng như mô tả.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ấm cúng và đồ ăn chất lượng.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không có gì đặc biệt, ổn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi thích không khí ở đây, rất dễ chịu.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn không tệ nhưng cũng không quá ngon.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Dịch vụ tuyệt vời, tôi sẽ quay lại.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Rất thất vọng với bữa ăn ở đây.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi sẽ không quay lại lần sau.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Đầu bếp nấu ăn rất ngon và chuyên nghiệp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Bữa ăn diễn ra như mong đợi.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn rất ngon, phục vụ chu đáo.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Rất hài lòng với bữa ăn hôm nay.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Tôi đã thử ăn ở đây một lần.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ bình thường.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thức ăn ngon, giá cả hợp lý.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Thái độ nhân viên tệ, thiếu lịch sự.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Một trải nghiệm ăn uống trung bình.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Giá quá cao so với chất lượng món ăn.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Phục vụ chậm và thiếu chuyên nghiệp.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn vừa miệng, không có gì phàn nàn.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Tôi không có nhiều ấn tượng.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Không gian ồn ào, khó chịu.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Thức ăn dở và không sạch sẽ.",
+    "sentiment": "negative"
+  },
+  {
+    "content": "Quán cũng bình thường như bao quán khác.",
+    "sentiment": "neutral"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Món ăn đậm đà, đúng vị truyền thống.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Nhà hàng sạch sẽ, món ăn trình bày đẹp.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Phục vụ nhanh chóng và thân thiện.",
+    "sentiment": "positive"
+  },
+  {
+    "content": "Không gian vừa đủ, không quá rộng.",
+    "sentiment": "neutral"
+  }
+]
