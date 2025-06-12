@@ -1,4 +1,4 @@
-import LikeModel from "../models/VideoLike.model.js";
+import LikeModel from "../models/videoLike.model.js";
 
 const toggleLike = async (userId, videoId) => {
   const existingLike = await LikeModel.findOne({ userId, videoId });
