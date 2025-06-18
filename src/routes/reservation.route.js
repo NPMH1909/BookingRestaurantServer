@@ -13,5 +13,6 @@ ReservationRouter.patch('/status/:id', ReservationController.updateReservationSt
 ReservationRouter.get('/restaurant-onhold/:restaurantId', ReservationController.getOnHoldReservationTodayByRestaurant)
 ReservationRouter.get('/restaurant-comfirm/:restaurantId', ReservationController.getConfirmedReservationTodayByRestaurant)
 ReservationRouter.get('/reservation/user',requireApiKey, ReservationController.getReservationsByUser)
+ReservationRouter.put('/:orderId/rating', requireApiKey, ReservationController.updateReservationRating)
 
 export default ReservationRouter

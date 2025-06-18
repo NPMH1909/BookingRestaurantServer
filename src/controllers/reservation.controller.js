@@ -1,6 +1,7 @@
 import { PAYMENT_STATUS } from '../constants/payment_status.constant.js';
 import OrderModel from '../models/order.model.js';
 import ReservationModel from '../models/reservation.model.js';
+import RestaurantModel from '../models/restaurant.model.js';
 
 const createReservation = async (req, res) => {
   try {
@@ -244,6 +245,62 @@ const getReservationsByUser = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
+
+const updateReservationRating = async (req, res) => {
+    try {
+        const { orderId } = req.params;
+        const { rating } = req.body;
+        console.log('first', orderId)
+        const userId = req.user.id;
+        if (!orderId || rating === undefined) {
+            return res.status(400).json({ success: false, message: "Missing orderId or rating." });
+        }
+
+        if (rating < 0 || rating > 5) {
+            return res.status(400).json({ success: false, message: "Rating must be between 0 and 5." });
+        }
+
+        // Tìm và cập nhật đơn hàng (phải đúng user)
+        const updatedOrder = await ReservationModel.findOneAndUpdate(
+            { _id: orderId, userId }, // Đảm bảo chỉ user đặt được phép đánh giá
+            { rating, updated_at: new Date() },
+            { new: true }
+        );
+
+        if (!updatedOrder) {
+            return res.status(404).json({ success: false, message: "Order not found or unauthorized." });
+        }
+
+        const restaurantId = updatedOrder.restaurantId;
+
+        // Tính lại rating trung bình của nhà hàng
+        const ratedOrders = await ReservationModel.find({
+            restaurantId,
+            rating: { $gt: 0 }
+        });
+
+        const totalRating = ratedOrders.reduce((sum, order) => sum + order.rating, 0);
+        const averageRating = Number((totalRating / ratedOrders.length).toFixed(1));
+
+        const updatedRestaurant = await RestaurantModel.findByIdAndUpdate(
+            restaurantId,
+            { rating: averageRating, updated_at: new Date() },
+            { new: true }
+        );
+
+        return res.status(200).json({
+            success: true,
+            message: "Rating updated successfully.",
+            order: updatedOrder,
+            restaurantRating: averageRating,
+            restaurant: updatedRestaurant
+        });
+    } catch (err) {
+        console.error("Error updating order rating:", err);
+        return res.status(500).json({ success: false, message: "Internal server error." });
+    }
+};
+
 export const ReservationController = {
   createReservation,
   updateReservation,
@@ -254,5 +311,6 @@ export const ReservationController = {
   updateReservationStatus,
   getOnHoldReservationTodayByRestaurant,
   getConfirmedReservationTodayByRestaurant,
-  getReservationsByUser
+  getReservationsByUser,
+  updateReservationRating
 }
