@@ -1,4 +1,5 @@
 import MenuItem from '../models/menuItem.model.js';
+import UserModel from '../models/user.model.js';
 import { MenuService } from '../services/menuItem.service.js';
 
 const createMenuItem = async (req, res) => {
@@ -40,16 +41,53 @@ const createMenuItem = async (req, res) => {
   }
 };
 
+const createMenuItemByManager = async (req, res) => {
+  try {
+    const { body, user } = req;
+    const managerId = user.id;
+    const manager = await UserModel.findById(managerId);
+    if (!manager || !manager.restaurantId) {
+      throw new Error("Manager chưa được gán restaurantId.");
+    }
+    const restaurantId = manager.restaurantId;
+    const image = req.file
+      ? { url: req.file.path, id: req.file.filename }
+      : null;
+
+    const menuItemData = {
+      ...body,
+      image,
+      restaurantId
+    };
+
+    const result = await MenuService.createMenuItem(menuItemData);
+
+    res.status(201).json({
+      status: 201,
+      success: true,
+      message: 'Tạo món ăn thành công.',
+      data: result
+    });
+  } catch (error) {
+    console.error("Error creating menu item:", error);
+    res.status(500).json({
+      success: false,
+      message: 'Tạo món ăn thất bại.',
+      error: error.message
+    });
+  }
+};
+
 const getMenuByResId = async (req, res) => {
   try {
     const { restaurantId } = req.params;
-    const { page = 1, size = 12, type } = req.query;
+    const { page = 1, size = 12, category } = req.query;
 
     const result = await MenuService.getMenuByResId({
       restaurantId,
       page: parseInt(page),
       size: parseInt(size),
-      category: type,
+      category,
     });
     res.status(200).json({
       success: true,
@@ -65,6 +103,30 @@ const getMenuByResId = async (req, res) => {
   }
 };
 
+const getMenuByManagerId = async (req, res) => {
+  try {
+    const managerId = req.user.id
+    const { page = 1, size = 12, category } = req.query;
+
+    const result = await MenuService.getMenuByManagerId({
+      managerId,
+      page: parseInt(page),
+      size: parseInt(size),
+      category,
+    });
+    res.status(200).json({
+      success: true,
+      message: 'Lấy danh sách món ăn thành công.',
+      ...result, // includes: data, pagination
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Lấy danh sách món ăn thất bại.',
+      error: error.message,
+    });
+  }
+};
 
 const getMenuItemById = async (req, res) => {
   try {
@@ -189,5 +251,7 @@ export const MenuController = {
   updateMenuItem,
   deleteMenuItem,
   getAllTypes,
-  getTopSellingMenuItems
+  getTopSellingMenuItems,
+  getMenuByManagerId,
+  createMenuItemByManager
 };

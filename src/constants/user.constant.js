@@ -1,1 +1,0 @@
-export const USER_ROLE = { USER: 'USER', ADMIN: 'RESTAURANT_OWNER', STAFF: 'STAFF' }

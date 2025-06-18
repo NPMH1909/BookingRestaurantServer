@@ -1,5 +1,6 @@
 import MenuItem from '../models/menuItem.model.js';
 import PromotionModel from '../models/promotion.model.js';
+import UserModel from '../models/user.model.js';
 import { PromotionService } from './promotion.service.js';
 
 const createMenuItem = async (data) => {
@@ -7,18 +8,18 @@ const createMenuItem = async (data) => {
   return await newItem.save();
 };
 
-const getMenuByResId = async ({ restaurantId, page = 1, size = 12, type }) => {
+
+const getMenuByResId = async ({ restaurantId, page = 1, size = 12, category }) => {
   const now = new Date();
 
-  // Tạo bộ lọc
   const query = {
     restaurantId,
-    ...(type ? { type } : {}),
+    ...(category ? { category } : {}),
   };
 
   // Đếm tổng số bản ghi
   const totalItems = await MenuItem.countDocuments(query);
-
+  console.log('total', totalItems)
   // Tính phân trang
   const skip = (page - 1) * size;
 
@@ -84,6 +85,82 @@ const getMenuByResId = async ({ restaurantId, page = 1, size = 12, type }) => {
   };
 };
 
+const getMenuByManagerId = async ({ managerId, page = 1, size = 12, category }) => {
+  const user = await UserModel.findById(managerId);
+  if (!user || !user.restaurantId) {
+    throw new Error("Manager does not have an assigned restaurant");
+  }
+
+  const restaurantId = user.restaurantId;
+  const now = new Date();
+
+  const query = {
+    restaurantId,
+    ...(category ? { category } : {}),
+  };
+
+  const totalItems = await MenuItem.countDocuments(query);
+  const skip = (page - 1) * size;
+
+  const menuItems = await MenuItem.find(query)
+    .skip(skip)
+    .limit(size)
+    .lean();
+
+  if (!menuItems.length) {
+    return {
+      data: [],
+      pagination: {
+        totalItems: 0,
+        totalPages: 0,
+        currentPage: page,
+        pageSize: size,
+      },
+    };
+  }
+
+  const promotions = await PromotionModel.find({
+    restaurantId,
+    isActive: true,
+    'activePeriod.start': { $lte: now },
+    'activePeriod.end': { $gte: now },
+  }).lean();
+
+  const data = menuItems.map((item) => {
+    const promo = promotions.find((p) =>
+      p.menuItems.some((menuId) => menuId.toString() === item._id.toString())
+    );
+
+    if (promo) {
+      const discountPercent = promo.discountPercent;
+      const originalPrice = item.price;
+      const discountedPrice = originalPrice - (originalPrice * discountPercent) / 100;
+
+      return {
+        ...item,
+        promotion: {
+          name: promo.name,
+          discountPercent,
+          originalPrice,
+          discountedPrice: Math.round(discountedPrice),
+        },
+      };
+    }
+
+    return item;
+  });
+
+  return {
+    data,
+    pagination: {
+      totalItems,
+      totalPages: Math.ceil(totalItems / size),
+      currentPage: page,
+      pageSize: size,
+    },
+  };
+};
+
 
 const getMenuItemById = async (id) => {
   const item = await MenuItem.findById(id);
@@ -110,10 +187,11 @@ const deleteMenuItem = async (id) => {
 };
 
 
-export const MenuService =  {
+export const MenuService = {
   createMenuItem,
   getMenuByResId,
   getMenuItemById,
   updateMenuItem,
   deleteMenuItem,
+  getMenuByManagerId
 };

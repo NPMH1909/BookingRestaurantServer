@@ -1,3 +1,4 @@
+import UserModel from '../models/user.model.js';
 import VideoModel from '../models/video.model.js';
 
 const createVideo = async (data) => {
@@ -72,6 +73,14 @@ const getAllVideosByResId = async (restaurantId) => {
   const query = restaurantId ? { restaurantId } : {};
   return await VideoModel.find(query).populate('restaurantId', 'name');
 };
+const getAllVideosByManagerId = async (managerId) => {
+  const user = await UserModel.findById(managerId);
+  if (!user || !user.restaurantId) {
+    throw new Error("Manager does not have an assigned restaurant");
+  }
+  const restaurantId = user.restaurantId;
+  return await VideoModel.find({ restaurantId }).populate('restaurantId', 'name');
+};
 
 const getVideoById = async (id) => {
   return await VideoModel.findById(id).populate('restaurantId', 'name');
@@ -92,4 +101,5 @@ export const VideoService = {
   getVideoById,
   updateVideo,
   deleteVideo,
+  getAllVideosByManagerId
 };

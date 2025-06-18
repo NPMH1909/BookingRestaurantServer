@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import RestaurantModel from "../models/restaurant.model.js";
 import PromotionModel from "../models/promotion.model.js";
+import UserModel from "../models/user.model.js";
 
 const getRestaurantById = async (restaurantId) => {
   try {
@@ -57,6 +58,56 @@ const getRestaurantById = async (restaurantId) => {
     throw error;
   }
 };
+
+const getRestaurantByManagerId = async (userId) => {
+  try {
+    const fieldsToSelect = [
+      "name",
+      "address",
+      "rangePrice",
+      "mainImage",
+      "galleryImages",
+      "workingHours",
+      "description",
+      "types",
+      "userId", // cần để populate
+    ].join(" ");
+
+    const user = await UserModel.findById(userId)
+    const restaurant = await RestaurantModel.findById(user.restaurantId)
+    .select(fieldsToSelect)
+    .lean();
+    if (!restaurant) {
+      throw new Error("Restaurant not found for this manager");
+    }
+
+    // Tìm khuyến mãi active (nếu có)
+    const now = new Date();
+    const promotion = await PromotionModel.findOne({
+      restaurantId: restaurant._id,
+      status: "active",
+      isActive: true,
+      "activePeriod.start": { $lte: now },
+      "activePeriod.end": { $gte: now },
+    }).lean();
+
+    restaurant.promotion = promotion
+      ? {
+          _id: promotion._id,
+          name: promotion.name,
+          description: promotion.description,
+          discountPercent: promotion.discountPercent,
+          activePeriod: promotion.activePeriod,
+        }
+      : null;
+
+    return restaurant;
+  } catch (error) {
+    console.error("Error fetching restaurant by manager:", error.message);
+    throw error;
+  }
+};
+
 
 const createRestaurant = async (data) => {
   const address = {
@@ -471,5 +522,6 @@ export const RestaurantService = {
   getProvinces,
   getDistrictsByProvince,
   getTopTrustedRestaurants,
-  findNearbyRestaurants
+  findNearbyRestaurants,
+  getRestaurantByManagerId
 }

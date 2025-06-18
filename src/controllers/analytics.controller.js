@@ -3,6 +3,7 @@ import MenuItem from '../models/menuItem.model.js';
 import RestaurantModel from '../models/restaurant.model.js';
 import UserModel from '../models/user.model.js';
 import mongoose from 'mongoose';
+import ReservationModel from '../models/reservation.model.js';
 
 export const getDashboardSummaryByRestaurant = async (req, res) => {
   try {
@@ -176,7 +177,7 @@ export const getMenuItemsToPrepare = async (req, res) => {
           itemId: '$menuItem._id',
           name: '$menuItem.name',
           unit: '$menuItem.unit',
-          image:'$menuItem.image',
+          image: '$menuItem.image',
           totalQuantity: 1,
           _id: 0
         }
@@ -191,3 +192,339 @@ export const getMenuItemsToPrepare = async (req, res) => {
   }
 };
 
+
+export const getReportByRestaurant = async (req, res) => {
+  try {
+    const { restaurantId } = req.params;
+    const { year, month, day } = req.query;
+
+    if (!year || !month) {
+      return res.status(400).json({ success: false, message: 'Missing year or month' });
+    }
+
+    const y = parseInt(year);
+    const m = parseInt(month);
+    const d = parseInt(day);
+
+    let start, end;
+
+    if (day) {
+      start = new Date(y, m - 1, d, 0, 0, 0);
+      end = new Date(y, m - 1, d, 23, 59, 59);
+    } else {
+      start = new Date(y, m - 1, 1, 0, 0, 0);
+      end = new Date(y, m, 0, 23, 59, 59); // Cuối tháng
+    }
+
+    // Lấy danh sách reservations
+    const reservations = await ReservationModel.find({
+      restaurantId,
+      checkin: { $gte: start, $lte: end }
+    });
+
+    const reservationIds = reservations.map(r => r._id);
+
+    // Lấy tất cả order liên quan
+    const orders = await OrderModel.find({
+      reservation: { $in: reservationIds }
+    });
+
+    const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
+    const totalOrders = orders.length;
+    const totalPeople = reservations.reduce((sum, r) => sum + (r.totalPeople || 0), 0);
+    const ratings = reservations.filter(r => r.rating > 0).map(r => r.rating);
+    const avgRating = ratings.length ? (ratings.reduce((a, b) => a + b) / ratings.length).toFixed(1) : 0;
+
+    // Thống kê món ăn bán chạy
+    const menuStats = {};
+    orders.forEach(order => {
+      order.menuItems.forEach(item => {
+        const key = item.item.toString();
+        if (!menuStats[key]) {
+          menuStats[key] = { name: item.name, quantity: 0 };
+        }
+        menuStats[key].quantity += item.quantity;
+      });
+    });
+
+    const topItems = Object.values(menuStats)
+      .sort((a, b) => b.quantity - a.quantity)
+      .slice(0, 5);
+
+    // 👉 Doanh thu theo ngày (chỉ tính khi xem theo tháng)
+    let dailyRevenue = [];
+    if (!day) {
+      const dailyRevenueAgg = await OrderModel.aggregate([
+        {
+          $match: {
+            reservation: { $in: reservationIds.map(id => new mongoose.Types.ObjectId(id)) }
+          }
+        },
+        {
+          $lookup: {
+            from: 'reservations',
+            localField: 'reservation',
+            foreignField: '_id',
+            as: 'reservationData'
+          }
+        },
+        { $unwind: '$reservationData' },
+        {
+          $match: {
+            'reservationData.checkin': { $gte: start, $lte: end }
+          }
+        },
+        {
+          $group: {
+            _id: {
+              $dateToString: { format: "%Y-%m-%d", date: "$reservationData.checkin" }
+            },
+            total: { $sum: "$total" }
+          }
+        },
+        { $sort: { _id: 1 } }
+      ]);
+
+      dailyRevenue = dailyRevenueAgg.map(item => ({
+        date: item._id,
+        revenue: item.total
+      }));
+    }
+
+    res.json({
+      success: true,
+      data: {
+        totalOrders,
+        totalRevenue,
+        totalPeople,
+        avgRating,
+        topItems,
+        dailyRevenue
+      }
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+
+
+export const getReportByOwner = async (req, res) => {
+  try {
+    const ownerId = req.user.id;
+    const { year, month, day } = req.query;
+
+    if (!year || !month) {
+      return res.status(400).json({ success: false, message: "Missing year or month" });
+    }
+
+    const pad = (n) => n.toString().padStart(2, '0');
+    const yearNum = parseInt(year);
+    const monthNum = parseInt(month);
+    const dayNum = parseInt(day);
+
+    let from, to;
+
+    if (day) {
+      from = new Date(`${year}-${pad(month)}-${pad(day)}T00:00:00.000Z`);
+      to = new Date(`${year}-${pad(month)}-${pad(day)}T23:59:59.999Z`);
+    } else {
+      const lastDay = new Date(yearNum, monthNum, 0).getDate();
+      from = new Date(`${year}-${pad(month)}-01T00:00:00.000Z`);
+      to = new Date(`${year}-${pad(month)}-${pad(lastDay)}T23:59:59.999Z`);
+    }
+
+    const restaurants = await RestaurantModel.find({ userId: ownerId });
+    const restaurantIds = restaurants.map(r => r._id);
+
+    const reservations = await ReservationModel.find({
+      restaurantId: { $in: restaurantIds },
+      checkin: { $gte: from, $lte: to },
+    });
+
+    const reservationIds = reservations.map(r => r._id);
+
+    const orders = await OrderModel.find({
+      reservation: { $in: reservationIds },
+    });
+
+    const totalRevenue = orders.reduce((sum, order) => sum + order.total, 0);
+    const totalOrders = orders.length;
+    const totalPeople = reservations.reduce((sum, r) => sum + (r.totalPeople || 0), 0);
+
+    const ratings = reservations.filter(r => r.rating > 0).map(r => r.rating);
+    const avgRating = ratings.length
+      ? (ratings.reduce((a, b) => a + b) / ratings.length).toFixed(1)
+      : 0;
+
+    const revenueByRestaurant = {};
+    orders.forEach(order => {
+      const rId = reservations.find(r => r._id.equals(order.reservation))?.restaurantId?.toString();
+      if (rId) {
+        revenueByRestaurant[rId] = (revenueByRestaurant[rId] || 0) + order.total;
+      }
+    });
+
+    const topRestaurantId = Object.entries(revenueByRestaurant)
+      .sort((a, b) => b[1] - a[1])[0]?.[0];
+    const topRestaurant = restaurants.find(r => r._id.equals(topRestaurantId));
+
+    // 📊 Daily revenue (if viewMode === 'month')
+    let dailyRevenue = [];
+    if (!day) {
+      const dailyMap = {};
+      orders.forEach(order => {
+        const reservation = reservations.find(r => r._id.equals(order.reservation));
+        if (reservation?.checkin) {
+          const dateStr = reservation.checkin.toISOString().slice(0, 10); // yyyy-mm-dd
+          dailyMap[dateStr] = (dailyMap[dateStr] || 0) + order.total;
+        }
+      });
+
+      dailyRevenue = Object.entries(dailyMap)
+        .map(([date, revenue]) => ({ date, revenue }))
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+    }
+
+    res.json({
+      success: true,
+      data: {
+        totalOrders,
+        totalRevenue,
+        totalPeople,
+        avgRating,
+        topRestaurant: topRestaurant
+          ? { name: topRestaurant.name, revenue: revenueByRestaurant[topRestaurantId] }
+          : null,
+        dailyRevenue,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+
+export const getReportByRestaurantByManager = async (req, res) => {
+  try {
+    const managerId = req.user.id
+    const manager = await UserModel.findById(managerId);
+    if (!manager || !manager.restaurantId) {
+      throw new Error("Manager chưa được gán restaurantId.");
+    }
+    const restaurantId = manager.restaurantId;
+    const { year, month, day } = req.query;
+
+    if (!year || !month) {
+      return res.status(400).json({ success: false, message: 'Missing year or month' });
+    }
+
+    const y = parseInt(year);
+    const m = parseInt(month);
+    const d = parseInt(day);
+
+    let start, end;
+
+    if (day) {
+      start = new Date(y, m - 1, d, 0, 0, 0);
+      end = new Date(y, m - 1, d, 23, 59, 59);
+    } else {
+      start = new Date(y, m - 1, 1, 0, 0, 0);
+      end = new Date(y, m, 0, 23, 59, 59); // Cuối tháng
+    }
+
+    // Lấy danh sách reservations
+    const reservations = await ReservationModel.find({
+      restaurantId,
+      checkin: { $gte: start, $lte: end }
+    });
+
+    const reservationIds = reservations.map(r => r._id);
+
+    // Lấy tất cả order liên quan
+    const orders = await OrderModel.find({
+      reservation: { $in: reservationIds }
+    });
+
+    const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
+    const totalOrders = orders.length;
+    const totalPeople = reservations.reduce((sum, r) => sum + (r.totalPeople || 0), 0);
+    const ratings = reservations.filter(r => r.rating > 0).map(r => r.rating);
+    const avgRating = ratings.length ? (ratings.reduce((a, b) => a + b) / ratings.length).toFixed(1) : 0;
+
+    // Thống kê món ăn bán chạy
+    const menuStats = {};
+    orders.forEach(order => {
+      order.menuItems.forEach(item => {
+        const key = item.item.toString();
+        if (!menuStats[key]) {
+          menuStats[key] = { name: item.name, quantity: 0 };
+        }
+        menuStats[key].quantity += item.quantity;
+      });
+    });
+
+    const topItems = Object.values(menuStats)
+      .sort((a, b) => b.quantity - a.quantity)
+      .slice(0, 5);
+
+    // 👉 Doanh thu theo ngày (chỉ tính khi xem theo tháng)
+    let dailyRevenue = [];
+    if (!day) {
+      const dailyRevenueAgg = await OrderModel.aggregate([
+        {
+          $match: {
+            reservation: { $in: reservationIds.map(id => new mongoose.Types.ObjectId(id)) }
+          }
+        },
+        {
+          $lookup: {
+            from: 'reservations',
+            localField: 'reservation',
+            foreignField: '_id',
+            as: 'reservationData'
+          }
+        },
+        { $unwind: '$reservationData' },
+        {
+          $match: {
+            'reservationData.checkin': { $gte: start, $lte: end }
+          }
+        },
+        {
+          $group: {
+            _id: {
+              $dateToString: { format: "%Y-%m-%d", date: "$reservationData.checkin" }
+            },
+            total: { $sum: "$total" }
+          }
+        },
+        { $sort: { _id: 1 } }
+      ]);
+
+      dailyRevenue = dailyRevenueAgg.map(item => ({
+        date: item._id,
+        revenue: item.total
+      }));
+    }
+
+    res.json({
+      success: true,
+      data: {
+        totalOrders,
+        totalRevenue,
+        totalPeople,
+        avgRating,
+        topItems,
+        dailyRevenue
+      }
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+};

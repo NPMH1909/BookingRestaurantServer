@@ -1,8 +1,35 @@
+import UserModel from '../models/user.model.js';
 import { PromotionService } from '../services/promotion.service.js';
 
 const createPromotion = async (req, res) => {
     try {
         const { restaurantId } = req.params;
+        const data = { ...req.body, restaurantId: restaurantId };
+
+        const result = await PromotionService.createPromotion(data);
+        res.status(201).json({
+            status: 201,
+            success: true,
+            message: 'Tạo khuyến mãi thành công.',
+            data: result,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Tạo khuyến mãi thất bại.',
+            error: error.message,
+        });
+    }
+};
+
+const createPromotionByManager = async (req, res) => {
+    try {
+        const managerId = req.user.id
+        const manager = await UserModel.findById(managerId);
+        if (!manager || !manager.restaurantId) {
+            throw new Error("Manager chưa được gán restaurantId.");
+        }
+        const restaurantId = manager.restaurantId;
         const data = { ...req.body, restaurantId: restaurantId };
 
         const result = await PromotionService.createPromotion(data);
@@ -52,6 +79,36 @@ const getAllPromotionsByResId = async (req, res) => {
     }
 };
 
+const getAllPromotionsByManagerId = async (req, res) => {
+    try {
+        const managerId = req.user.id;
+        const { page = 1, limit = 10 } = req.query;
+
+        const { promotions, totalCount } = await PromotionService.getAllPromotionsByManagerId(
+            managerId,
+            parseInt(page),
+            parseInt(limit)
+        );
+
+        res.status(200).json({
+            success: true,
+            message: 'Lấy danh sách khuyến mãi thành công.',
+            data: promotions,
+            pagination: {
+                currentPage: parseInt(page),
+                limit: parseInt(limit),
+                totalCount,
+                totalPages: Math.ceil(totalCount / limit),
+            },
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Lấy danh sách khuyến mãi thất bại.',
+            error: error.message,
+        });
+    }
+};
 
 const getPromotionById = async (req, res) => {
     try {
@@ -116,4 +173,6 @@ export const PromotionController = {
     createPromotion,
     updatePromotion,
     deletePromotion,
+    getAllPromotionsByManagerId,
+    createPromotionByManager
 }

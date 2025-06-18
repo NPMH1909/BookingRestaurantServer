@@ -124,6 +124,25 @@ const getRestaurantById = async (req, res) => {
     });
   }
 };
+const getRestaurantByManagerId = async (req, res) => {
+  try {
+    const userId  = req.user.id
+    const result = await RestaurantService.getRestaurantByManagerId(userId);
+
+    return res.status(200).json({
+      success: true,
+      message: 'Lấy danh sách nhà hàng thành công.',
+      data: result,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: 'Lấy danh sách nhà hàng thất bại.',
+      error: err.message,
+    });
+  }
+};
+
 const getListRestaurantByUserId = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -405,6 +424,58 @@ const getRecentlyViewedRestaurants = async (req, res) => {
   }
 };
 
+const getAllOwnersWithInfo = async (req, res) => {
+  try {
+    const owners = await RestaurantModel.aggregate([
+      {
+        $group: {
+          _id: '$userId',
+        },
+      },
+      {
+        $lookup: {
+          from: 'users', // tên collection (viết thường, số nhiều)
+          localField: '_id',
+          foreignField: '_id',
+          as: 'userInfo',
+        },
+      },
+      {
+        $unwind: '$userInfo',
+      },
+      {
+        $project: {
+          _id: 0,
+          userId: '$_id',
+          name: '$userInfo.name',
+          email: '$userInfo.email',
+          phone: '$userInfo.phone', // nếu có
+        },
+      },
+    ]);
+
+    res.status(200).json({ success: true, data: owners });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Lỗi khi lấy thông tin chủ nhà hàng' });
+  }
+};
+const getRestaurantsByOwner = async (req, res) => {
+  try {
+    const { ownerId } = req.query;
+
+    if (!ownerId) {
+      return res.status(400).json({ success: false, message: 'Thiếu ownerId' });
+    }
+
+    const restaurants = await RestaurantModel.find({ userId: ownerId }).select('_id name');
+
+    res.status(200).json({ success: true, data: restaurants });
+  } catch (err) {
+    console.error('❌ Lỗi lấy nhà hàng theo ownerId:', err);
+    res.status(500).json({ success: false, message: 'Lỗi server' });
+  }
+};
 export const RestaurantController = {
   createRestaurant,
   getAllRestaurants,
@@ -419,5 +490,8 @@ export const RestaurantController = {
   getRestaurantsWithExpiringPromotions,
   getTopTrustedRestaurants,
   getNearbyRestaurants,
-  getRecentlyViewedRestaurants
+  getRecentlyViewedRestaurants,
+  getRestaurantByManagerId,
+  getAllOwnersWithInfo,
+  getRestaurantsByOwner
 }

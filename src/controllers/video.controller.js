@@ -5,6 +5,7 @@ import SearchLogModel from '../models/searchLog.model.js';
 import { SearchLogService } from '../services/searchlog.service.js';
 import { VideoService } from '../services/video.service.js';
 import VideoModel from '../models/video.model.js';
+import UserModel from '../models/user.model.js';
 
 function removeVietnameseTones(str) {
   return str.normalize("NFD")
@@ -97,7 +98,94 @@ const createVideo = async (req, res) => {
   }
 };
 
+const createVideoByManager = async (req, res) => {
+  try {
+    const { content, tags } = req.body;
+    const managerId = req.user.id
+    const manager = await UserModel.findById(managerId);
+    if (!manager || !manager.restaurantId) {
+      throw new Error("Manager chưa được gán restaurantId.");
+    }
+    const restaurantId = manager.restaurantId; const file = req.file;
 
+    if (!file) {
+      return res.status(400).json({ success: false, message: 'Chưa upload video.' });
+    }
+
+    // Lấy thông tin nhà hàng
+    const restaurant = await RestaurantModel.findById(restaurantId).populate('types');
+    if (!restaurant) {
+      return res.status(404).json({ success: false, message: 'Không tìm thấy nhà hàng.' });
+    }
+
+    // Tag người dùng nhập
+    const userTags = (tags || '')
+      .split(',')
+      .map(tag => tag.trim())
+      .filter(Boolean);
+
+    // Tag tự động từ nhà hàng
+    const autoTags = [];
+
+    // Tên nhà hàng
+    if (restaurant.name) {
+      autoTags.push(removeVietnameseTones(restaurant.name).replace(/\s+/g, '').toLowerCase());
+    }
+
+    // Tỉnh và huyện
+    if (restaurant.address?.province) {
+      autoTags.push(removeVietnameseTones(restaurant.address.province).toLowerCase());
+    }
+    if (restaurant.address?.district) {
+      autoTags.push(removeVietnameseTones(restaurant.address.district).toLowerCase());
+    }
+
+    // Loại nhà hàng
+    if (restaurant.types && Array.isArray(restaurant.types)) {
+      restaurant.types.forEach(type => {
+        if (type.name) {
+          autoTags.push(removeVietnameseTones(type.name).toLowerCase());
+        }
+      });
+    }
+
+    // Gộp và loại trùng
+    const finalTags = Array.from(new Set([...userTags, ...autoTags]));
+
+    // Upload video
+    const uploadResult = await new Promise((resolve, reject) => {
+      const stream = cloudinary.uploader.upload_stream(
+        { resource_type: 'video', folder: 'orderingfood' },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      );
+      stream.end(file.buffer);
+    });
+
+    // Tạo video
+    const video = await VideoService.createVideo({
+      url: uploadResult.secure_url,
+      content,
+      restaurantId,
+      tags: finalTags
+    });
+
+    return res.status(201).json({
+      success: true,
+      message: 'Tạo video thành công.',
+      data: video,
+    });
+
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: 'Tạo video thất bại.',
+      error: err.message,
+    });
+  }
+};
 
 const getAllVideosByResId = async (req, res) => {
   try {
@@ -110,6 +198,28 @@ const getAllVideosByResId = async (req, res) => {
       });
     }
     const videos = await VideoService.getAllVideosByResId(restaurantId);
+    return res.status(200).json({
+      success: true,
+      data: videos,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: "Lấy danh sách video thất bại.",
+      error: err.message,
+    });
+  }
+};
+const getAllVideosByManagerId = async (req, res) => {
+  try {
+    const managerId = req.user.id;
+    if (!managerId) {
+      return res.status(400).json({
+        success: false,
+        message: "Thiếu restaurantId trong URL.",
+      });
+    }
+    const videos = await VideoService.getAllVideosByManagerId(managerId);
     return res.status(200).json({
       success: true,
       data: videos,
@@ -208,7 +318,6 @@ const updateVideo = async (req, res) => {
   }
 };
 
-
 const deleteVideo = async (req, res) => {
   try {
     const deleted = await VideoService.deleteVideo(req.params.id);
@@ -300,5 +409,7 @@ export const VideoController = {
   deleteVideo,
   getAllVideosByResId,
   getSearchSuggestions,
-  getMostLikedVideoByRestaurant
+  getMostLikedVideoByRestaurant,
+  getAllVideosByManagerId,
+  createVideoByManager
 };

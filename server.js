@@ -4,6 +4,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import rateLimit from 'express-rate-limit'
+import './src/controllers/cronReport.js';
 
 import { body, validationResult } from 'express-validator'
 // import { createServer } from 'node:http'

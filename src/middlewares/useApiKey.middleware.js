@@ -5,7 +5,7 @@ import { NotFoundError } from '../errors/notFound.error.js'
 import { ForbiddenRequestError } from '../errors/forbiddenRequest.error.js'
 import { UnAuthorizedError } from '../errors/unauthorizedRequest.error.js'
 import { Response } from '../dto/response/response.js'
-import { USER_ROLE } from '../constants/user.constant.js'
+import { USER_ROLE } from '../constants/role.constant.js'
 import { Schema, Types } from 'mongoose'
 
 export const createApiKey = (data) => {
@@ -64,7 +64,7 @@ export const authenticationAdmin = async (req, res, next) => {
     ) {
       throw new UnAuthorizedError('Bạn cần đăng nhập')
     }
-    if (req.user.role !== 'RESTAURANT_OWNER') {
+    if (req.user.role !== 'RESTAURANT_OWNER' && req.user.role !== 'MANAGER') {
       throw new ForbiddenRequestError('Bạn không có quyền truy cập')
     }
     next()

@@ -1,4 +1,5 @@
 import PromotionModel from '../models/promotion.model.js';
+import UserModel from '../models/user.model.js';
 
 const createPromotion = async (data) => {
   const promotion = new PromotionModel(data);
@@ -21,7 +22,29 @@ const getAllPromotionsByResId = async (restaurantId, page = 1, limit = 10) => {
 
   return { promotions, totalCount };
 };
+const getAllPromotionsByManagerId = async (managerId, page = 1, limit = 10) => {
+  const skip = (page - 1) * limit;
 
+  const user = await UserModel.findById(managerId);
+  if (!user || !user.restaurantId) {
+    throw new Error("Manager does not have an assigned restaurant");
+  }
+
+  const restaurantId = user.restaurantId;
+
+  const [promotions, totalCount] = await Promise.all([
+    PromotionModel.find({ restaurantId })
+      .populate("restaurantId", "name")
+      .populate("menuItems", "name price")
+      .select("-createdAt -updatedAt")
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit),
+    PromotionModel.countDocuments({ restaurantId }),
+  ]);
+
+  return { promotions, totalCount };
+};
 
 const getPromotionById = async (id) => {
   const promotion = await PromotionModel.findById(id)
@@ -93,4 +116,5 @@ export const PromotionService = {
   deletePromotion,
   getActivePromotionsForRestaurant,
   mapMenuWithPromotions,
+  getAllPromotionsByManagerId
 };

@@ -5,47 +5,6 @@ import SearchLogModel from "../models/searchLog.model.js";
 import OrderModel from "../models/order.model.js";
 import RestaurantModel from "../models/restaurant.model.js";
 
-// export const getRecommendations = async (req, res) => {
-//   try {
-//     const userId = req.user.id;
-
-//     const py = spawn("python", ["src/ml-recommender/predict.py"]);
-//     const input = JSON.stringify({ userId });
-
-//     let result = "";
-//     let error = "";
-
-//     py.stdin.write(input);
-//     py.stdin.end();
-
-//     py.stdout.on("data", (data) => {
-//       result += data.toString();
-//     });
-
-//     py.stderr.on("data", (data) => {
-//       error += data.toString();
-//     });
-
-//     py.on("close", (code) => {
-//       if (error) {
-//         console.error("Python error:", error);
-//         return res.status(500).json({ error: "Lỗi khi gọi script Python", detail: error });
-//       }
-
-//       try {
-//         const recommendations = JSON.parse(result);
-//         return res.status(200).json({ recommendations });
-//       } catch (err) {
-//         console.error("Parse error:", err.message);
-//         return res.status(500).json({ error: "Lỗi phân tích dữ liệu từ Python." });
-//       }
-//     });
-//   } catch (err) {
-//     return res.status(500).json({ error: "Lỗi server", detail: err.message });
-//   }
-// };
-
-
 
 export const getRecommendations = async (req, res) => {
   try {
@@ -61,7 +20,6 @@ export const getRecommendations = async (req, res) => {
     return res.status(500).json({ error: "Lỗi server", detail: err.message });
   }
 };
-
 
 export const recommendRestaurants = async (userId) => {
   const favorites = await FavoriteRestaurantModel.find({ userId }).lean();

@@ -30,6 +30,10 @@ const RestaurantSchema = new Schema(
     },
     description: { type: String, required: true },
     rating: { type: Number, required: true, default: 0 },
+    bankAccountId: {
+      type: Schema.Types.ObjectId,
+      ref: 'BankAccounts',
+    },
     orderAvailable: { type: Number, default: 20 },
     peopleAvailable: { type: Number, default: 20 },
     limitTime: { type: Number, default: 2 },

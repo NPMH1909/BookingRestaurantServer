@@ -5,20 +5,20 @@ const createOrder = async (data) => {
 };
 
 const getOrdersByUser = async (userId, page = 1, limit = 10) => {
-    page = parseInt(page);
-    limit = parseInt(limit);
-    const skip = (page - 1) * limit;
+  page = parseInt(page);
+  limit = parseInt(limit);
+  const skip = (page - 1) * limit;
 
-    const [orders, totalCount] = await Promise.all([
-        OrderModel.find({ userId })
-            .sort({ createdAt: -1 })
-            .skip(skip)
-            .limit(limit)
-            .populate('restaurantId menuItems'),
-        OrderModel.countDocuments({ userId })
-    ]);
+  const [orders, totalCount] = await Promise.all([
+    OrderModel.find({ userId })
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
+      .populate('restaurantId menuItems'),
+    OrderModel.countDocuments({ userId })
+  ]);
 
-    return { orders, totalCount };
+  return { orders, totalCount };
 };
 
 
@@ -34,27 +34,42 @@ const deleteOrder = async (id) => {
   return await OrderModel.findByIdAndDelete(id);
 };
 const getOrdersByResId = async (restaurantId, page = 1, limit = 10) => {
-    page = parseInt(page);
-    limit = parseInt(limit);
-    const skip = (page - 1) * limit;
+  page = parseInt(page);
+  limit = parseInt(limit);
+  const skip = (page - 1) * limit;
 
-    try {
-        const [orders, totalCount] = await Promise.all([
-            OrderModel.find({ restaurantId })
-                .populate('userId', 'name email')
-                .populate('menuItems.item', 'name price')
-                .sort({ createdAt: -1 })
-                .skip(skip)
-                .limit(limit),
-            OrderModel.countDocuments({ restaurantId })
-        ]);
+  try {
+    // Lấy tất cả đơn hàng có reservation thuộc restaurantId
+    const [orders, totalCount] = await Promise.all([
+      OrderModel.find()
+        .populate({
+          path: 'reservation',
+          match: { restaurantId }, // lọc theo restaurantId trong reservation
+          populate: { path: 'userId', select: 'name email' },
+        })
+        .populate('menuItems.item', 'name price')
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limit)
+        .then(results => results.filter(order => order.reservation !== null)), // loại bỏ đơn hàng không khớp
+      OrderModel.countDocuments().then(async (total) => {
+        // đếm số lượng đơn hàng có reservation thuộc restaurantId
+        const filtered = await OrderModel.find()
+          .populate({
+            path: 'reservation',
+            match: { restaurantId },
+          });
+        return filtered.filter(o => o.reservation !== null).length;
+      }),
+    ]);
 
-        return { orders, totalCount };
-    } catch (error) {
-        console.error('Error getting orders by restaurant ID:', error);
-        throw error;
-    }
+    return { orders, totalCount };
+  } catch (error) {
+    console.error('Error getting orders by restaurant ID:', error);
+    throw error;
+  }
 };
+
 
 
 const getConfirmedOrdersTodayByRestaurant = async (restaurantId) => {

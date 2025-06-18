@@ -8,6 +8,7 @@ const UserSchema = new Schema({
   role: { type: String, required: true },
   salt: { type: String, required: true },
   otp: { type: String },
+  restaurantId: {type: Schema.Types.ObjectId, ref: 'Restaurants'}
 }, { timestamps: true })
 const UserModel = model('Users', UserSchema)
 export default UserModel

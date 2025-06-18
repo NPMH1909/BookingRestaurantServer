@@ -5,6 +5,7 @@ import { CommonUtils } from "../utils/common.util.js"
 import { BadRequestError } from "../errors/badRequest.error.js"
 import { MailService } from "../services/mail.service.js"
 import StaffModel from "../models/staff.model.js"
+import UserModel from "../models/user.model.js"
 
 const loginUser = async (req, res, next) => {
   try {
@@ -47,11 +48,80 @@ const registerStaff = async (req, res, next) => {
   }
 }
 
+const registerStaffByManager = async (req, res, next) => {
+  try {
+
+    const managerId = req.user.id
+    const data = { ...req.body, managerId }
+    const result = await UserService.registerStaffByManager(data)
+    next(new Response(HttpStatusCode.Created, 'Đăng ký thành công', result).resposeHandler(res))
+  } catch (error) {
+    next(new Response(error.statusCode || HttpStatusCode.InternalServerError, error.message, null).resposeHandler(res))
+  }
+}
+
+const registerManager = async (req, res, next) => {
+  try {
+
+    const { restaurantId } = req.params
+    const data = { ...req.body, restaurantId }
+    const result = await UserService.registerManager(data)
+    next(new Response(HttpStatusCode.Created, 'Đăng ký thành công', result).resposeHandler(res))
+  } catch (error) {
+    next(new Response(error.statusCode || HttpStatusCode.InternalServerError, error.message, null).resposeHandler(res))
+  }
+}
+
 const getStaffsByRestaurantId = async (req, res, next) => {
   try {
     const { page, limit } = req.query
     const { restaurantId } = req.params
     const users = await UserService.getStaffsByRestaurantId(restaurantId, Number(page) || 1, Number(limit) || 5)
+    next(new Response(HttpStatusCode.Ok, 'Đã tìm thấy tài khoản', users.data, users.pagination).resposeHandler(res))
+  } catch (error) {
+    next(new Response(error.statusCode || HttpStatusCode.InternalServerError, error.message, null).resposeHandler(res))
+  }
+}
+
+export const getManagerByRestaurantId = async (req, res, next) => {
+  try {
+    const { page = 1, limit = 5 } = req.query;
+    const { restaurantId } = req.params;
+
+    const pageNumber = Number(page);
+    const pageSize = Number(limit);
+
+    const users = await UserModel.find({ restaurantId })
+      .skip((pageNumber - 1) * pageSize)
+      .limit(pageSize);
+
+    const total = await UserModel.countDocuments({ restaurantId });
+
+    const pagination = {
+      page: pageNumber,
+      limit: pageSize,
+      totalPages: Math.ceil(total / pageSize),
+      totalRecords: total,
+    };
+
+    next(
+      new Response(200, 'Đã tìm thấy tài khoản', users, pagination).resposeHandler(res)
+    );
+  } catch (error) {
+    next(
+      new Response(
+        error.statusCode || 500,
+        error.message || 'Internal server error',
+        null
+      ).resposeHandler(res)
+    );
+  }
+};
+const getStaffsByManagerId = async (req, res, next) => {
+  try {
+    const { page, limit } = req.query
+    const managerId = req.user.id
+    const users = await UserService.getStaffsByManagerId(managerId, Number(page) || 1, Number(limit) || 5)
     next(new Response(HttpStatusCode.Ok, 'Đã tìm thấy tài khoản', users.data, users.pagination).resposeHandler(res))
   } catch (error) {
     next(new Response(error.statusCode || HttpStatusCode.InternalServerError, error.message, null).resposeHandler(res))
@@ -66,7 +136,6 @@ const deleteUser = async (req, res, next) => {
     }
     next(new Response(HttpStatusCode.Ok, 'Xóa tài khoản thành công', null).resposeHandler(res))
   } catch (error) {
-    await LogService.createLog(req.user.id, 'Xóa nhân viên', error.statusCode || HttpStatusCode.InternalServerError)
     next(new Response(error.statusCode || HttpStatusCode.InternalServerError, error.message, null).resposeHandler(res))
   }
 }
@@ -185,5 +254,9 @@ export const UserController = {
   resetPassword,
   sendResetPasswordEmail,
   getStaffById,
-  getRestaurantByStaff
+  getRestaurantByStaff,
+  registerManager,
+  getStaffsByManagerId,
+  registerStaffByManager,
+  getManagerByRestaurantId
 }
