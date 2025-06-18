@@ -23,12 +23,8 @@ const app = express()
 // const io = new Server(server)
 
 const port = process.env.PORT || 7000
-app.use(
-  cors({
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-    credentials: true
-  })
-)
+app.use(cors());
+
 // HTTP logger
 app.use(morgan('dev'))
 app.use(morgan('combined'))
